@@ -4,115 +4,91 @@
   <meta charset="UTF-8">
   <title>Badge Luna Delacour</title>
   <style>
-.body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("logo lses.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px;
-    opacity: 1;
-}
+    /* === FOND GÉNÉRAL === */
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.badge {
-  background-color: rgba(255, 255, 255, 0.8); /* Fond blanc un peu transparent */
-  width: 350px;
-  height: 520px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 2;
-}
+    /* === CADRE DU BADGE === */
+    .badge-horizontal {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: rgba(255, 255, 255, 0.9);
+      background-image: url("logo lses.png"); /* ✅ Logo LSES en fond */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 300px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      max-width: 700px;
+      width: 90%;
+    }
 
-
-    .photo {
-      height: 320px;
-      width: 100%;
+    /* === PHOTO === */
+    .photo-small {
+      height: 160px;
+      width: 130px;
       object-fit: cover;
       border-radius: 10px;
-      z-index: 1;
+      margin-right: 30px;
+      border: 2px solid #ccc;
     }
 
-    .info {
-      text-align: center;
-      z-index: 1;
-    }
-
-    .info h2 {
-      margin: 10px 0 3px;
-    }
-
-    .bottom {
+    /* === ZONE INFO + QR === */
+    .info-block {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      z-index: 1;
+      height: 100%;
     }
 
-    .hospital {
-      font-weight: bold;
-      color: #004aad;
+    /* === INFOS TEXTES === */
+    .info-text p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #333;
     }
 
+    .info-text strong {
+      color: #000;
+    }
+
+    /* === QR CODE === */
     .qr {
-      width: 80px;
+      margin-top: 20px;
+      width: 90px;
     }
-	
-	.badge-horizontal {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px 30px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: 40px auto;
-  font-family: Arial, sans-serif;
-  background-image: url("logo lses.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 350px;
-}
-
-.photo-small {
-  height: 150px;
-  width: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 30px;
-  border: 2px solid #ddd;
-}
-
-.info-text p {
-  margin: 8px 0;
-  font-size: 16px;
-  color: #333;
-}
   </style>
 </head>
-<body>
- <div class="badge-horizontal">
-  <img class="photo-small" src="Luna photo.jpg" alt="Luna Delacour">
-  <div class="info-text">
-    <p><strong>Nom / Prénom :</strong> Luna Delacour</p>
-    <p><strong>Téléphone :</strong> 555-7429</p>
-    <p><strong>Grade :</strong> Interne</p>
-    <p><strong>Hôpital :</strong> LSES</p>
-  </div>
-</div>
 
-      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html">
+<body>
+  <!-- === CONTENU DU BADGE === -->
+  <div class="badge-horizontal">
+    
+    <!-- 📷 PHOTO DE LUNA -->
+    <img class="photo-small" src="Luna photo.jpg" alt="Luna Delacour">
+
+    <!-- 📄 INFOS & QR CODE -->
+    <div class="info-block">
+      <div class="info-text">
+        <p><strong>Nom / Prénom :</strong> Luna Delacour</p>
+        <p><strong>Téléphone :</strong> 555-7429</p>
+        <p><strong>Grade :</strong> Interne</p>
+        <p><strong>Hôpital :</strong> LSES</p>
+      </div>
+
+      <!-- 🔲 QR CODE VERS IDENTIFICATION -->
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
     </div>
+
   </div>
 </body>
 </html>
