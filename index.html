@@ -14,44 +14,43 @@
       height: 100vh;
     }
 
-    .badge {
-      width: 800px;
-      height: 300px;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      overflow: hidden;
-    }
+   .badge {
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.9); /* fond blanc translucide */
+		border-radius: 20px;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		z-index: 1;
+		overflow: hidden; /* pour que le filigrane ne dépasse pas */
+	}
 
-    /* === Filigrane logo en fond === */
-    .badge::before {
+/* FILIGRANE EN FOND */
+	.badge::before {
 		content: "";
 		position: absolute;
 		background-image: url("logo-lses.png");
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: 250px;
-		opacity: 0.03; /* ← plus pâle ici */
+		background-size: 300px;
+		opacity: 0.03; /* ajuste ici pour plus ou moins visible */
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: 1;
+		z-index: 0;
 	}
 
+/* le contenu doit rester au-dessus */
+	.content {
+		z-index: 1;
+		position: relative;
+		display: flex;
+		gap: 20px;
+	}
 
-    .content {
-      display: flex;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      justify-content: flex-start;
-      gap: 20px;
-    }
 
     .photo {
       width: 120px;
