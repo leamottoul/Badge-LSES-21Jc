@@ -4,105 +4,103 @@
   <meta charset="UTF-8">
   <title>Badge Luna Delacour</title>
   <style>
+    /* === STYLE GÉNÉRAL DE LA PAGE === */
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: #f4f4f4;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
-   .badge {
-		position: relative;
-		position: relative;
-		background-color: rgba(255, 255, 255, 0.9);
-		overflow: hidden;
-		background-color: rgba(255, 255, 255, 0.9); /* fond blanc translucide */
-		border-radius: 20px;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-		padding: 20px;
-		display: flex;
-		gap: 20px;
-		align-items: center;
-		z-index: 1;
-		overflow: hidden; /* pour que le filigrane ne dépasse pas */
-	}
+    /* === CADRE DU BADGE === */
+    .badge {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 800px;
+    }
 
-/* FILIGRANE EN FOND */
-	.badge::before {
-		content: "";
-		position: absolute;
-		background-image: url("logo-lses.png");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 300px;
-		opacity: 0.03; /* ajuste ici pour plus ou moins visible */
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 0;
-	}
+    /* === LOGO FILIGRANE EN FOND === */
+    .badge::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url('logo-lses.png');
+      background-size: 200px;
+      background-repeat: no-repeat;
+      opacity: 0.06;
+      width: 200px;
+      height: 200px;
+      z-index: 0;
+    }
 
-/* le contenu doit rester au-dessus */
-	.content {
-		z-index: 1;
-		position: relative;
-		display: flex;
-		gap: 20px;
-	}
+    /* === ZONE DE CONTENU (devant le logo) === */
+    .content {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      gap: 20px;
+    }
 
-
+    /* === PHOTO DE PROFIL === */
     .photo {
       width: 120px;
-      height: 160px;
-      border-radius: 10px;
+      height: 150px;
       object-fit: cover;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-grow: 1;
-    }
-
-    .info p {
-      margin: 6px 0;
-    }
-
-    .info b {
-      color: #000;
-    }
-
+    /* === QR CODE === */
     .qr {
       width: 100px;
       height: 100px;
+    }
+
+    /* === INFOS DU PERSO === */
+    .infos {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .infos p {
+      margin: 0;
+    }
+
+    .infos strong {
+      color: #000;
     }
   </style>
 </head>
 <body>
 
+  <!-- === BADGE COMPLET === -->
   <div class="badge">
     <div class="content">
-
-      <!-- Photo -->
+      
+      <!-- === PHOTO DU PERSONNAGE === -->
       <img src="Luna photo.jpg" alt="Luna Delacour" class="photo">
 
-      <!-- QR + Infos -->
-      <div>
-        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
-      </div>
+      <!-- === QR CODE === -->
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
 
-      <!-- Infos à droite -->
-      <div class="info">
-        <p><b>Nom / Prénom :</b> Luna Delacour</p>
-        <p><b>Téléphone :</b> 555-7429</p>
-        <p><b>Grade :</b> Interne</p>
-        <p><b>Hôpital :</b> LSES</p>
+      <!-- === INFOS PERSONNELLES === -->
+      <div class="infos">
+        <p><strong>Nom / Prénom :</strong> Luna Delacour</p>
+        <p><strong>Téléphone :</strong> 555-7429</p>
+        <p><strong>Grade :</strong> Interne</p>
+        <p><strong>Hôpital :</strong> LSES</p>
       </div>
 
     </div>
