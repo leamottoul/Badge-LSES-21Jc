@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Badge Luna Delacour</title>
   <style>
-    /* === FOND DE LA PAGE === */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -15,7 +14,6 @@
       height: 100vh;
     }
 
-    /* === BADGE PRINCIPAL === */
     .badge {
       width: 800px;
       height: 300px;
@@ -29,15 +27,15 @@
       overflow: hidden;
     }
 
-    /* === FILIGRANE LOGO EN FOND === */
+    /* === Filigrane logo en fond === */
     .badge::before {
       content: "";
       position: absolute;
-      background-image: url("logo-lses.png"); /* ⬅️ Mets le bon nom exact ici */
+      background-image: url("logo-lses.png"); /* ← Ton logo en fond */
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 300px;
-      opacity: 0.1;
+      background-size: 250px;
+      opacity: 0.05; /* Opacité légère ici */
       top: 0;
       left: 0;
       width: 100%;
@@ -45,30 +43,28 @@
       z-index: 0;
     }
 
-    /* === CONTENU DANS LE BADGE === */
     .content {
       display: flex;
       position: relative;
       z-index: 1;
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 20px;
     }
 
-    /* === PHOTO DU PERSO === */
     .photo {
-      width: 150px;
-      height: 200px;
+      width: 120px;
+      height: 160px;
       border-radius: 10px;
       object-fit: cover;
-      margin-right: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    /* === INFOS TEXTE === */
     .info {
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex-grow: 1;
     }
 
     .info p {
@@ -79,7 +75,6 @@
       color: #000;
     }
 
-    /* === QR CODE === */
     .qr {
       width: 100px;
       height: 100px;
@@ -88,16 +83,18 @@
 </head>
 <body>
 
-  <!-- === BADGE START === -->
   <div class="badge">
-
-    <!-- === CONTENU DU BADGE === -->
     <div class="content">
 
-      <!-- === PHOTO DU PERSO === -->
-      <img src="Luna photo.jpg" alt="Luna Delacour" class="photo"> <!-- Remplace par ton vrai nom d'image -->
+      <!-- Photo -->
+      <img src="Luna photo.jpg" alt="Luna Delacour" class="photo">
 
-      <!-- === INFOS TEXTE === -->
+      <!-- QR + Infos -->
+      <div>
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
+      </div>
+
+      <!-- Infos à droite -->
       <div class="info">
         <p><b>Nom / Prénom :</b> Luna Delacour</p>
         <p><b>Téléphone :</b> 555-7429</p>
@@ -105,12 +102,8 @@
         <p><b>Hôpital :</b> LSES</p>
       </div>
 
-      <!-- === QR CODE === -->
-      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
     </div>
-
   </div>
-  <!-- === BADGE END === -->
 
 </body>
 </html>
