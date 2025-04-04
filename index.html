@@ -29,19 +29,20 @@
 
     /* === Filigrane logo en fond === */
     .badge::before {
-      content: "";
-      position: absolute;
-      background-image: url("logo-lses.png"); /* ← Ton logo en fond */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 250px;
-      opacity: 0.5; /* Opacité légère ici */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
+		content: "";
+		position: absolute;
+		background-image: url("logo-lses.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 250px;
+		opacity: 0.03; /* ← plus pâle ici */
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
 
     .content {
       display: flex;
