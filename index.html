@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Badge Médical</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 40px;
-            max-width: 600px;
-            margin: auto;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-        h1 {
-            color: #2b6777;
-            text-align: center;
-        }
-        .info {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .info p {
-            margin: 5px 0;
-        }
-        .code {
-            background-color: #eee;
-            padding: 10px;
-            font-family: monospace;
-            border: 1px dashed #999;
-            width: fit-content;
-        }
-        .alert {
-            color: red;
-            font-weight: bold;
-            margin-top: 30px;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Badge Luna Delacour</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .badge {
+      background: white;
+      width: 350px;
+      height: 520px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .photo {
+      height: 320px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    .info {
+      text-align: center;
+      z-index: 1;
+    }
+
+    .info h2 {
+      margin: 10px 0 3px;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .hospital {
+      font-weight: bold;
+      color: #004aad;
+    }
+
+    .qr {
+      width: 80px;
+    }
+  </style>
 </head>
 <body>
-
-    <h1>Identification Médicale</h1>
-
+  <div class="badge">
+    <img class="photo" src="Luna photo.jpg" alt="Luna Delacour">
+    
     <div class="info">
-        <p><strong>Nom :</strong> Luna Delacour</p>
-        <p><strong>Rôle :</strong> Interne</p>
-        <p><strong>Hôpital :</strong> Zone LSES</p>
-        <p><strong>Date d'émission :</strong> 02/04/2025</p>
-        <p><strong>Code d’identification :</strong> <span class="code">LUNA-458R</span></p>
+      <h2>Luna Delacour</h2>
+      <p>Interne</p>
     </div>
 
-    <div class="alert">
-        ⛔ Accès réservé au personnel médical de l'Hôpital LSES ⛔
+    <div class="bottom">
+      <div class="hospital">LSES HÔPITAL</div>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/" alt="QR Code">
     </div>
-
+  </div>
 </body>
 </html>
