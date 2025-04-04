@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Badge {{Nom}}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .badge {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      min-width: 600px;
+    }
+
+    /* Filigrane logo LSES */
+    .badge::before {
+      content: "";
+      background-image: url('logo-lses.png'); /* ton logo */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 200px;
+      position: absolute;
+      opacity: 0.04;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .content {
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .photo {
+      width: 100px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .qr {
+      width: 100px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .info b {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === BADGE COMPLET === -->
+  <div class="badge">
+    <div class="content">
+      
+      <!-- === PHOTO DU PERSONNAGE === -->
+      <img src="Silhouette.jpg" alt="Silhouette" class="photo">
+
+      <!-- === QR CODE === -->
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://leamottoul.github.io/Badge-LSES-21Jc/identification-luna.html" alt="QR Code">
+
+      <!-- === INFOS PERSONNELLES === -->
+      <div class="infos">
+        <p><strong>Nom / Prénom :</strong> .....</p>
+        <p><strong>Téléphone :</strong> 555-...</p>
+        <p><strong>Grade :</strong> ....</p>
+        <p><strong>Hôpital :</strong> LSES</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
